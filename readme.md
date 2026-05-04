@@ -1,6 +1,6 @@
 # My First-Ever GDI Malware
 ## <strong>Introduction</strong>
-This is based on my old project, `permanent-bluescreen-cpp`, which I made. This new ptoject contains the destructive payload from that progect and some `BitBlt` and `PatBlt`.
+This is based on my old project, `permanent-bluescreen-cpp`, which I made. This new ptoject contains the destructive payload from that project and some `BitBlt` and `PatBlt`.
 ## <strong>The GDI</strong>
 GDI means Graphics-Device Interface. It is used for glitching the screen, at least what I think. As said above, it contains  `BitBlt`  and  `PatBlt` . It uses this:
 ```cpp
