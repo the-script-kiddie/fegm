@@ -1,1 +1,1 @@
-createobject("wscript.shell").sendkeys("{CTRL}{SCROLLLOCK}");
+createobject("wscript.shell").sendkeys("{CTRL}{SCROLLLOCK}{SCROLLLOCK}");
