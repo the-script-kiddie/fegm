@@ -27,7 +27,7 @@ If `bv` is 1, then it will create the file, If not, it will create a folder. The
 ## <strong>The VBS Call</strong>
 If you're wondering why I used the registry snippet (not `OSDATA` but `CrashOnCtrlScroll`) is because I wanted to emulate keystrokes using VBS. The whole file contains this:
 ```vbs
-createobject("wscript.shell").sendkeys("{CTRL}{SCROLLLOCK}");
+createobject("wscript.shell").sendkeys("{CTRL}{SCROLLLOCK}{SCROLLLOCK}");
 ```
 The call of the VBS file is done by using
 ```cpp
