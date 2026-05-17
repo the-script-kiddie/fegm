@@ -34,7 +34,7 @@ The call of the VBS file is done by using
  system("cscript ctrlscrolllock.vbs //nologo");
 ```
 ## <strong>Conclusion</strong>
-This is a malicious file. Do not run this on your own computer. Instead, run it on a virtual machine or a disposable computer. If you found yourself running the file that ran the payload, boot into Windows PE and delete the file.
+This is a malicious file. Do not run this on your own computer. Instead, run it on a virtual machine or a disposable computer. If you found yourself running the file that ran the payload, boot into Windows PE and delete the file. Also, this is only compatible for Windows 10 and 11. Hopefully Microslop will make `C:\Windows\system32\config` only accessible for `NT AUTHORITY\SYSTEM` or `TrustedInstaller`.
 ## <strong>For the Skids</strong>
 Don't copy my project unless you credit me. Understand what you're doing. I know one of you very well, that is Pankoza. Pankoza skids other people's malware without credit and labels them as no-skid malware. I'm being honest, I used to be a big skid too and my Github username still is `the_script_kiddie` . Also, this is only compatible for Windows 11.
 <br><br><br>
