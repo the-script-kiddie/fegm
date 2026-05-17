@@ -1,5 +1,5 @@
 #include <stdlib.h> // for system();
-#include <windows.h> // for gdi screen slitches
+#include <windows.h> // for gdi screen glitches
 #include <iostream> // for beep
 
 int main()
